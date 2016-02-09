@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+		<meta charset="utf-8">
+		<base href="/" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Lucy&Greg Cleaners</title>
+		<meta name="author" content="Lukas">
+		<meta property="og:title" content="Lucy & Greg cleaning services" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://lucygregcleaning.co.uk" />
+		<meta property="og:image" content="http://lucygregcleaning.co.uk/images/logo.png" />
+		<meta property="og:description" content="Lucy & Greg cleaning services, Brighton and Hove - domestic and office cleaning, end of tenancy cleaning and spring/deep cleaning." />
+		<meta property="fb:app_id" content="630818947063902" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<!-- Custom styles for this template -->
+		<link href="css/cover.css" rel="stylesheet">
+		<link href="angular-social/angular-social.css" rel="stylesheet">
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+	</head>
+
+	<body ng-app="stronka">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 center-block">
+					<a href="main"><img src="images/logo.png" width="335" height="113" alt="Lucy & Greg Cleaning Services" class="center-block"/></a>
+				</div>
+				<div class="col-lg-6 col-sm-12">
+					<div class="header text-center" ng-controller="MenuCtrl">
+						<nav style="margin-top: 10px">
+							<ul class="nav nav-pills center-pills">
+								<li role="presentation" ng-class="{ active: isActive('/main')}">
+									<a href="main">Welcome</a>
+								</li>
+								<li role="presentation" ng-class="{ active: isActive('/services')}">
+									<a href="services">Services</a>
+
+								</li>
+								<li role="presentation" ng-class="{ active: isActive('/contact')}">
+									<a href="contact">Contact</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div ng-view style="height: 100%; margin:0"></div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="js/lib/bootstrap.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.min.js"></script>
+		<script src="app.js"></script>
+		<script src="js/controllers/MenuControllers.js"></script>
+		<script src="js/services/MailServices.js"></script>
+		<script src="angular-social/angular-social.js"></script>
+		<script src="js/controllers/ContactControllers.js"></script>
+		<script src="js/lib/ui-bootstrap-tpls-0.12.0.js"></script>
+		<script src="js/lib/event.js"></script>
+		<script src="js/lib/ui-map.js"></script>
+		<script src="http://pc035860.github.io/angular-easyfb/angular-easyfb.min.js"></script>
+		<script type="text/ng-template" id="like.html">
+			<div ng-if="pluginOn" onrender="rendered()" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+		</script>
+</html>

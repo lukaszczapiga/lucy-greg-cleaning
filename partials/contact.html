@@ -1,0 +1,155 @@
+<div class="row">
+	<div class="cover-container">
+		<div class="inner cover">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h2 class="panel-title">Contact details</h2>
+						</div>
+						<div class="panel-body">
+							<p>
+								Brighton and Hove area
+							</p>
+							<p>
+								Mobile: 07906245233
+							</p>
+							<p>
+								Email: contact@lucygregcleaning.co.uk
+							</p>
+							<h3>Contact hours</h3>
+							<div class="list-group">
+								<p>
+									Monday to Friday, 8:00 - 18:00
+								</p>
+								<p class="list-group-item-text">
+									Saturday, 9:00 - 15:00
+								</p>
+							</div>
+							<section id="map" ng-controller="MapCtrl" >
+								<div id="map_canvas" class="map-canvas"></div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="panel panel-primary" >
+						<div class="panel-heading">
+							<h2 class="panel-title">Contact and Recommendation forms</h2>
+						</div>
+						<div class="panel-body">
+							<tabset>
+								<tab heading="Contact us" ng-controller="ContactCtrl">
+									<form ng-submit="submit(contactForm)" name="contactForm" method="post" class="form-horizontal" role="form">
+										<div class="form-group" ng-class="{ 'has-error': contactForm.inputName.$invalid && submitted }">
+											<label for="inputName" class="col-lg-2 control-label">Name</label>
+											<div class="col-lg-10">
+												<input ng-model="formData.inputName" type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name" required>
+											</div>
+										</div>
+										<div class="form-group" ng-class="{ 'has-error': contactForm.inputFromEmail.$invalid && submitted }">
+											<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+											<div class="col-lg-10">
+												<input ng-model="formData.inputFromEmail" type="email" class="form-control" id="inputFromEmail" name="inputFromEmail" placeholder="Your Email" required>
+											</div>
+										</div>
+										<div class="form-group" ng-class="{ 'has-error': contactForm.inputSubject.$invalid && submitted }">
+											<label for="inputSubject" class="col-lg-2 control-label">Subject</label>
+											<div class="col-lg-10">
+												<input ng-model="formData.inputSubject" type="text" class="form-control" id="inputSubject" name="inputSubject" placeholder="Subject Message" required>
+											</div>
+										</div>
+										<div class="form-group" ng-class="{ 'has-error': contactForm.inputMessage.$invalid && submitted }">
+											<label for="inputMessage" class="col-lg-2 control-label">Message</label>
+											<div class="col-lg-10">
+												<textarea ng-model="formData.inputMessage" class="form-control" rows="4" id="inputMessage" name="inputMessage" placeholder="Your message..." required></textarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-lg-offset-2 col-lg-10">
+												<button type="submit" class="btn btn-primary" ng-disabled="submitButtonDisabled">
+													Send Message
+												</button>
+											</div>
+										</div>
+									</form>
+									<p ng-class="result" style="padding: 15px; margin: 0;">
+										{{ resultMessage }}
+									</p>
+								</tab>
+								<tab heading="Recommend us" ng-controller="ContactCtrl">
+									<form ng-submit="submit(recommendForm)" name="recommendForm" method="post" class="form-horizontal" role="form">
+										<div class="form-group" ng-class="{ 'has-error': recommendForm.inputName.$invalid && submitted }">
+											<label for="inputName" class="col-lg-2 control-label">Name</label>
+											<div class="col-lg-10">
+												<input ng-model="formData.inputName" type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name" required>
+											</div>
+										</div>
+										<div class="form-group" ng-class="{ 'has-error': recommendForm.inputFromEmail.$invalid && submitted }">
+											<label for="inputEmail" class="col-lg-2 control-label">Your email</label>
+											<div class="col-lg-10">
+												<input ng-model="formData.inputFromEmail" type="email" class="form-control" id="inputFromEmail" name="inputFromEmail" placeholder="Your Email" required>
+											</div>
+										</div>
+										<div class="form-group" ng-class="{ 'has-error': recommendForm.inputToEmail.$invalid && submitted }">
+											<label for="inputEmail" class="col-lg-2 control-label">Receiver's email</label>
+											<div class="col-lg-10">
+												<input ng-model="formData.inputToEmail" type="email" class="form-control" id="inputToEmail" name="inputToEmail" placeholder="Receiver's email" required>
+											</div>
+										</div>
+										<div class="form-group" ng-class="{ 'has-error': recommendForm.inputSubject.$invalid && submitted }">
+											<label for="inputSubject" class="col-lg-2 control-label">Subject</label>
+											<div class="col-lg-10">
+												<input ng-model="formData.inputSubject" type="text" class="form-control" id="inputSubject" name="inputSubject" placeholder="Subject Message" required>
+											</div>
+										</div>
+										<div class="form-group" ng-class="{ 'has-error': recommendForm.inputMessage.$invalid && submitted }">
+											<label for="inputMessage" class="col-lg-2 control-label">Message</label>
+											<div class="col-lg-10">
+												<textarea ng-model="formData.inputMessage" class="form-control" rows="4" id="inputMessage" name="inputMessage" placeholder="Your message..." required></textarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-lg-offset-2 col-lg-10">
+												<button type="submit" class="btn btn-primary" ng-disabled="submitButtonDisabled">
+													Send Recommendation
+												</button>
+											</div>
+										</div>
+									</form>
+									<p ng-class="result" style="padding: 15px; margin: 0;">
+										{{ resultMessage }}
+									</p>
+								</tab>
+							</tabset>
+						</div>
+					</div>
+					<div class="panel panel-primary" >
+						<div class="panel-heading">
+							<h2 class="panel-title">Like and Share</h2>
+						</div>
+						<div class="panel-body">
+							<div class="fb-like padding" data-href="http://lucygregcleaning.co.uk/" data-width="300" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
+							<div class="fb-like-box padding" data-href="https://www.facebook.com/lucygregcleaning" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+							<div class="ng-social-container padding" ng-social-buttons="" data-url="'http://lucygregcleaning.co.uk/'" data-title="'Lucy & Greg cleaning service'" data-image="'http://lucygregcleaning.co.uk/images/logo.png'" data-description="'Lucy & Greg cleaning services, Brighton and Hove - domestic and office cleaning, end of tenancy cleaning and spring/deep cleaning.'">
+								<ul class="ng-social">
+									<li class="ng-social-google-plus">
+										Google+
+									</li>
+									<li class="ng-social-twitter">
+										Twitter
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<p>
+					&copy; Lukasz Czapiga
+				</p>
+			</footer>
+		</div>
+	</div>
+</div>
